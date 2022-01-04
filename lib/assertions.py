@@ -1,6 +1,7 @@
 from requests import Response
 import json
 
+
 class Assertions:
     @staticmethod
     def assert_json_value_by_name(response: Response, name, expected_value, error_message):
@@ -32,7 +33,7 @@ class Assertions:
             assert name in response_as_dict, f"Response JSON doesn't have key '{name}'"
 
     @staticmethod
-    def assert_code_status(response:Response, expected_code):
+    def assert_code_status(response: Response, expected_code):
         assert response.status_code == expected_code, \
             f"Unexpected status code! Expected: {expected_code}. Actual: {response.status_code}"
 

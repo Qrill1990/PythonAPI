@@ -1,4 +1,3 @@
-from lib.base_case import BaseCase
 from lib.assertions import Assertions
 from lib import variables
 import allure
@@ -6,7 +5,7 @@ from lib.my_requests import MyRequests
 
 
 @allure.epic("SID Cases")
-class TestUserSID(BaseCase):
+class TestUserSID:
 
     @allure.description("This test successfully returns SID for user")
     def test_get_sid_successfully(self):

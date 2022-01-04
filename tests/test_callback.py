@@ -1,19 +1,19 @@
-from lib.base_case import BaseCase
+from lib.base_case import get_sid
 from lib.assertions import Assertions
 from lib import variables
-from lib.payloads import Payloads
+from lib.payloads import payload_callback_200
 import allure
 from lib.my_requests import MyRequests
 
 
 @allure.epic("Callback Cases")
-class TestCallback(BaseCase):
+class TestCallback:
 
     @allure.description("This test successfully returns callback results")
     def test_get_callback_successfully(self):
-        sid = self.get_sid()
+        sid = get_sid()
         response = MyRequests.post(url=f"{variables.callback_url}",
-                                   json=Payloads.payload_callback_200(self, sid=sid),
+                                   json=payload_callback_200(sid=sid),
                                    headers={'Content-Type': 'application/json',
                                             'Accept': 'text/plain'}
                                    )

@@ -5,22 +5,26 @@ import allure
 
 class MyRequests:
     @staticmethod
-    def post(url: str, json: dict = None, data: dict = None, params: dict = None, headers: dict = None, cookies: dict = None):
+    def post(url: str, json: dict = None, data: dict = None, params: dict = None, headers: dict = None,
+             cookies: dict = None):
         with allure.step(f"POST request to URL '{url}'"):
             return MyRequests._send(url, json, data, params, headers, cookies, "POST")
 
     @staticmethod
-    def get(url: str, json: dict = None, data: dict = None, params: dict = None, headers: dict = None, cookies: dict = None):
+    def get(url: str, json: dict = None, data: dict = None, params: dict = None, headers: dict = None,
+            cookies: dict = None):
         with allure.step(f"GET request to URL '{url}'"):
             return MyRequests._send(url, json, data, params, headers, cookies, "GET")
 
     @staticmethod
-    def put(url: str,  json: dict = None, data: dict = None,  params: dict = None, headers: dict = None, cookies: dict = None):
+    def put(url: str,  json: dict = None, data: dict = None,  params: dict = None, headers: dict = None,
+            cookies: dict = None):
         with allure.step(f"PUT request to URL '{url}'"):
             return MyRequests._send(url, json, data, params, headers, cookies, "PUT")
 
     @staticmethod
-    def delete(url: str,  json: dict = None, data: dict = None,  params: dict = None, headers: dict = None, cookies: dict = None):
+    def delete(url: str,  json: dict = None, data: dict = None,  params: dict = None, headers: dict = None,
+               cookies: dict = None):
         with allure.step(f"DELETE request to URL '{url}'"):
             return MyRequests._send(url, json, data, params, headers, cookies, "DELETE")
 
