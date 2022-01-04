@@ -13,13 +13,14 @@ class Logger:
             logger_file.write(data)
 
     @classmethod
-    def add_request(cls, url: str, data: dict, params: dict, headers: dict, cookies: dict, method: str):
+    def add_request(cls, url: str, json: dict, data: dict, params: dict, headers: dict, cookies: dict, method: str):
         test_name = os.environ.get("PYTEST_CURRENT_TEST")
         data_to_add = "\n-----\n"
         data_to_add += f"Test: {test_name}\n"
         data_to_add += f"Time: {str(datetime.datetime.now())}\n"
         data_to_add += f"Request method: {method}\n"
         data_to_add += f"Request url: {url}\n"
+        data_to_add += f"Request json: {json}\n"
         data_to_add += f"Request data: {data}\n"
         data_to_add += f"Request params: {params}\n"
         data_to_add += f"Request headers: {headers}\n"
