@@ -1,7 +1,7 @@
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
-import variables
-from payloads import Payloads
+from lib import variables
+from lib.payloads import Payloads
 import allure
 from lib.my_requests import MyRequests
 

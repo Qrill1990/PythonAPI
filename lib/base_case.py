@@ -3,7 +3,7 @@ import json.decoder
 import requests
 from requests import Response
 
-import variables
+from lib import variables
 
 
 class BaseCase:
