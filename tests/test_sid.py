@@ -26,7 +26,7 @@ class TestUserSID:
 
     @allure.description("This test checks error 400 if there is empty query parameters")
     def test_get_sid_with_empty_param(self):
-        response = MyRequests.post(f"{variables.url}/init_session", params={})
+        response = MyRequests.post(f"{variables.url}/init_session", params={"dboPublicKoUri": ""})
 
         Assertions.assert_code_status(response, 400)
         names = ["errorCode", "errorMessage"]
