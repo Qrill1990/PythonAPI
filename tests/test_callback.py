@@ -29,7 +29,7 @@ class TestCallback:
         names = ["code", "message"]
         Assertions.assert_json_has_keys(response, names)
         Assertions.assert_json_value_by_name(response, "code", "BNK-0001", "There is wrong code from adapter")
-        Assertions.assert_json_value_by_name(response, "message", "В запросе отсутствует параметр user_data",
+        Assertions.assert_json_value_by_name(response, "message", "В запросе отсутствует параметр user_data/person_data",
                                              "there is wrong message in message key")
 
     @allure.description("This test returns 400 because there is no data but sid")
