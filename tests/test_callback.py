@@ -10,10 +10,17 @@ from lib.my_requests import MyRequests
 class TestCallback:
     sid = get_sid()
 
-    @allure.description("This test successfully returns callback results")
-    def test_get_callback_successfully(self):
+    @allure.description("This test successfully returns callback results with person_data")
+    def test_get_callback_successfully_with_person_data(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
-                                   json=payload_callback_200(sid=self.sid),
+                                   json=payload_callback_200_person_data(sid=self.sid),
+                                   headers=common_json_headers
+                                   )
+        Assertions.assert_code_status(response, 200)
+
+    def test_get_callback_successfully_with_user_data(self):
+        response = MyRequests.post(url=f"{variables.callback_url}",
+                                   json=payload_callback_200_user_data(sid=get_sid()),
                                    headers=common_json_headers
                                    )
         Assertions.assert_code_status(response, 200)
