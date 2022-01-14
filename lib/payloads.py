@@ -138,7 +138,7 @@ def payload_callback_200_user_data(sid):
     data = {
         'sid': f'{sid}',
         'auth_result': 'true',
-        'res_secret': f'{unique_uuid}',
+        'res_secret': f'{uuid.uuid4()}',
         'extended_result': 'eyJraWQiOiIyNTE4ZDNhMy05NTc0LTRkOTMtODQ0YS0wZjIwNjE2YTI3Mj /'
                            'QiLCJ0eXAiOiJKV1QiLCJhbGciOiJHT1NUMzQxMCJ9.eyJyZXN1bHQiOnR /'
                            'ydWUsInN1YiI6IjEwMDAzMTY5MTEiLCJhdWQiOiJUS19VQlNfREVWIiwib /'
