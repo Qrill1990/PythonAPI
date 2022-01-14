@@ -8,8 +8,7 @@ from lib.my_requests import MyRequests
 
 @allure.epic("Callback Cases")
 class TestCallback:
-    def setup(self):
-        self.sid = get_sid()
+    sid = get_sid()
 
     @allure.description("This test successfully returns callback results")
     def test_get_callback_successfully(self):
@@ -29,7 +28,8 @@ class TestCallback:
         names = ["code", "message"]
         Assertions.assert_json_has_keys(response, names)
         Assertions.assert_json_value_by_name(response, "code", "BNK-0001", "There is wrong code from adapter")
-        Assertions.assert_json_value_by_name(response, "message", "В запросе отсутствует параметр user_data/person_data",
+        Assertions.assert_json_value_by_name(response, "message",
+                                             "В запросе отсутствует параметр user_data/person_data",
                                              "there is wrong message in message key")
 
     @allure.description("This test returns 400 because there is no data but sid")

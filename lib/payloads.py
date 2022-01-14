@@ -1,11 +1,13 @@
 import uuid
 
+unique_uuid = uuid.uuid4()
+
 
 def payload_callback_200(sid):
     data = {
         'sid': f'{sid}',
         'auth_result': 'true',
-        'res_secret': f'{uuid.uuid4()}',
+        'res_secret': f'{unique_uuid}',
         'extended_result': 'eyJraWQiOiIyNTE4ZDNhMy05NTc0LTRkOTMtODQ0YS0wZjIwNjE2YTI3Mj /'
                            'QiLCJ0eXAiOiJKV1QiLCJhbGciOiJHT1NUMzQxMCJ9.eyJyZXN1bHQiOnR /'
                            'ydWUsInN1YiI6IjEwMDAzMTY5MTEiLCJhdWQiOiJUS19VQlNfREVWIiwib /'
@@ -136,7 +138,7 @@ def payload_callback_400(sid):
     data = {
         'sid': f'{sid}',
         'auth_result': 'true',
-        'res_secret': '81ec6a78-26e5-438e-a6d4-1f15d91c9d7c',
+        'res_secret': f'{unique_uuid}',
         'extended_result': 'eyJraWQiOiIyNTE4ZDNhMy05NTc0LTRkOTMtODQ0YS0wZjIwNjE2YTI3Mj /'
                            'QiLCJ0eXAiOiJKV1QiLCJhbGciOiJHT1NUMzQxMCJ9.eyJyZXN1bHQiOnR /'
                            'ydWUsInN1YiI6IjEwMDAzMTY5MTEiLCJhdWQiOiJUS19VQlNfREVWIiwib /'
