@@ -18,6 +18,7 @@ class TestCallback:
                                    )
         Assertions.assert_code_status(response, 200)
 
+    @allure.description("This test successfully returns callback results with user_data")
     def test_get_callback_successfully_with_user_data(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
                                    json=payload_callback_200_user_data(sid=get_sid()),
