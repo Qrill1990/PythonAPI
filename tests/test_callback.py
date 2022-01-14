@@ -10,6 +10,7 @@ from lib.my_requests import MyRequests
 class TestCallback:
     sid = get_sid()
 
+    @allure.title("Тест на ответ 200 если передан массив person_data")
     @allure.description("This test successfully returns callback results with person_data")
     def test_get_callback_successfully_with_person_data(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
@@ -18,6 +19,7 @@ class TestCallback:
                                    )
         Assertions.assert_code_status(response, 200)
 
+    @allure.title("Тест на ответ 200 если передан массив user_data")
     @allure.description("This test successfully returns callback results with user_data")
     def test_get_callback_successfully_with_user_data(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
@@ -26,7 +28,8 @@ class TestCallback:
                                    )
         Assertions.assert_code_status(response, 200)
 
-    @allure.description("This test returns 400 because there is no person_data in payload")
+    @allure.title("Тест на ответ 400 если не передан массив person_data/user_data")
+    @allure.description("This test returns 400 because there is no person_data/user_data in payload")
     def test_get_callback_without_person_data(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
                                    json=payload_callback_400(sid=self.sid),
@@ -40,6 +43,7 @@ class TestCallback:
                                              "В запросе отсутствует параметр user_data/person_data",
                                              "there is wrong message in message key")
 
+    @allure.title("Тест на ответ 400 если передан только сид")
     @allure.description("This test returns 400 because there is no data but sid")
     def test_get_callback_without_anything_but_sid(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
@@ -53,6 +57,7 @@ class TestCallback:
         Assertions.assert_json_value_by_name(response, "message", "В запросе отсутствует параметр auth_result",
                                              "there is wrong message in message key")
 
+    @allure.title("Тест на ответ 400 если передано пустое тело запроса")
     @allure.description("This test returns 400 because there is empty callback")
     def test_get_callback_without_anything(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
