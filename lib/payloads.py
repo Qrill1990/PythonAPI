@@ -289,4 +289,367 @@ def payload_callback_400_auth(sid):
     return data
 
 
+def payload_questionnaire_200(res_secret):
+    data = {
+        "resSecret": f"{res_secret}",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": [
+                    {
+                        "answerCode": "Q05A01",
+                        "answerValue": "1"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_with_wrong_res_secret():
+    data = {
+        "resSecret": f"{uuid.uuid4()}",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": [
+                    {
+                        "answerCode": "Q05A01",
+                        "answerValue": "1"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_with_empty_res_secret():
+    data = {
+        "resSecret": "",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": [
+                    {
+                        "answerCode": "Q05A01",
+                        "answerValue": "1"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_without_res_secret():
+    data = {
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": [
+                    {
+                        "answerCode": "Q05A01",
+                        "answerValue": "1"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_400_answer_value(res_secret):
+    data = {
+        "resSecret": f"{res_secret}",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "2"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": [
+                    {
+                        "answerCode": "Q05A01",
+                        "answerValue": "1"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_400_no_answers(res_secret):
+    data = {
+        "resSecret": f"{res_secret}",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q05",
+                "answers": []
+            }
+        ]
+    }
+    return data
+
+
+def payload_questionnaire_400_no_question(res_secret):
+    data = {
+        "resSecret": f"{res_secret}",
+        "questions": [
+            {
+                "questionCode": "Q01",
+                "answers": [
+                    {
+                        "answerCode": "Q01A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q02",
+                "answers": [
+                    {
+                        "answerCode": "Q02A01",
+                        "answerValue": "0"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q03",
+                "answers": [
+                    {
+                        "answerCode": "Q03A01",
+                        "answerValue": "1"
+                    }
+                ]
+            },
+            {
+                "questionCode": "Q04",
+                "answers": [
+                    {
+                        "answerCode": "Q04A01",
+                        "answerValue": "0"
+                    }
+                ]
+            }
+        ]
+    }
+    return data
+
+
 common_json_headers = {'Content-Type': 'application/json', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br'}
