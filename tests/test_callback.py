@@ -31,7 +31,7 @@ class TestCallback:
 
     @allure.title("Тест на ответ 400 если передан несуществующий сид")
     @allure.description("This test returns 400 because there is no sid in database")
-    def test_get_callback_successfully_with_user_data(self):
+    def test_get_callback_with_wrong_sid(self):
         response = MyRequests.post(url=f"{variables.callback_url}",
                                    json=payload_callback_200_user_data(sid=uuid.uuid4()),
                                    headers=common_json_headers
