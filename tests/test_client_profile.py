@@ -30,8 +30,7 @@ class TestClientProfile:
         assert response_as_dict["clientProfile"]["snils"] == "00000000031", "wrong value of snils"
         assert response_as_dict["clientProfile"]["inn"] == "645933077752", "wrong value of inn"
         assert response_as_dict["clientProfile"]["phoneSms"] == "+7(999)5888000", "wrong value of phoneSms"
-        # Пока баг
-        # assert response_as_dict["clientProfile"]["email"] == "200300", "wrong value of email"
+        assert response_as_dict["clientProfile"]["email"] == "esldff@gmail.com", "wrong value of email"
 
     @allure.title("Тест на получение клиентского профиля с несуществующим resSecret")
     @allure.description("This test returns 404 because resSecret is wrong")
