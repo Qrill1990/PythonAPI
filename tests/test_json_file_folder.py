@@ -25,4 +25,4 @@ class TestJsonFileFolder:
         Assertions.assert_code_status(response1, 200)
 
         assert os.path.isfile(f'/Users/kirilllyubushkin/Downloads/{sid}.json'), "There is no file in directory"
-
+        os.remove(f'/Users/kirilllyubushkin/Downloads/{sid}.json')
