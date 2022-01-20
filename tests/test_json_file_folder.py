@@ -9,7 +9,7 @@ import os.path
 
 @allure.epic("Integration Cases")
 class TestJsonFileFolder:
-    @allure.title("Тест на ответ на проверку, что json файл выгрузился")
+    @allure.title("Тест на проверку, что json файл выгрузился")
     @allure.description("This test checks if json file exists")
     def test_check_json_file(self):
         sid = get_sid()
